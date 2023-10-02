@@ -1,0 +1,94 @@
+body {
+  background-color: #000000;
+  overflow: hidden; /* Tira tudo que está sobrando do body será escondido, tirando a rolagem*/
+}
+
+main::after { /* Pseudo elemento */
+  content: ""; /* Adiciona um conteudo para o elemento after, adiciona um conteudo depois da tag main */
+  position: fixed; /* Fixa um elemento na tela */
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 80vw;
+
+  background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat; /* Degrade */
+}
+
+.personagem {
+  display: none; /* Esconde a apresentação dos elementos */
+  height: 100vh; /* O personagem terá a altura da tela do dispositivo que está sendo usado */
+  
+}
+main .personagem.selecionado { /* Ativa a regra guando o elemento tiver as duas classes presentes */
+  display: block; /* Mostra */
+}
+
+main .personagem .imagem { /* Mecher na tag de imagem está dentro de personagem */
+  width: 100%; /* A imagem terá que se encaixar com 100% do espaço de largura, dentro do personagem */
+  height: 100%; /* A imagem terá que se encaixar com 100% do espaço de altura, dentro do personagem */
+  object-fit: cover; /* Tira a distorção da imagem, mantem as dimenções corretas de largura e altura, fazendo com que elea cubra o elemento personagem */
+}
+
+.conteudo { /* Estiliza todos os elementos com essa classe */
+  position: absolute; /* Posiciona o elemento de forma absoluta na pagina, coloca o elemento por cima */
+  top: 0; /* Coloca o elemento na posição 0 */
+  left: 120px; /* Espaçamento de 120 pixeus para a direita */
+  display: flex; /* Turna os elementos de conteudo fexiveis */
+  flex-direction: column; /* Coloca os elementos em colunas, define em qual direção o contêiner deseja empilhar os flex items */
+  justify-content: center; /* Alinha os elementos verticalmente */
+  min-height: 100vh;
+  max-width: 380px;
+  z-index: 1; /* Eixo Z, de profundidade, coloca o elemento por cima, colocando todos que o possuem*/
+}
+
+.conteudo .nome-personagem {
+  color: #FFFFFF;
+  font-size: 48px; /* Tamanho da fonte */
+  font-family: "Secular One";
+  font-weight: 400; /* Peso da fonte */
+  margin-bottom: 20px; /* Espaçamento so abaixo */
+}
+
+.conteudo .descricao {
+  color: #FFFFFF;
+  font-family: "Rubik";
+  line-height: 24px; /* Altura entre as linhas */
+}
+
+.conteudo .logo {
+  background-image: url("one-piece-logo.png");
+  background-size: cover; /* O tamanho do background cobrirá a area de o logo tem que ficar */
+  height: 100px;
+  width: 230px;
+  margin-bottom: 35px;
+}
+
+.botoes {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 180px;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center; /* Alinha os elemntos verticalmente */
+  align-items: center; /* Alinha os elemntos horizontalmente */
+  gap: 10px; /* Espaçamento em todos os elementos ao usar o display: flex; */
+}
+
+.botoes .botao {
+  border: none; /* Tira a borda */
+  background: #000000;
+  cursor: pointer; /* Coloca a mãozinha ao passar com o mause */
+  border-radius: 50%;
+}
+
+.botoes .botao img {
+  border-radius: 50%; /* Arredonda os elementos */
+}
+
+.botoes .botao.selecionado { /* Somente o botao que tiver a classe selecionado terá um estilo diferente */
+  transform: scale(1.2); /* Almenta o tanho do elemento em 1.2 */
+  box-shadow: 0 0 10px #D9D9D9; /* Sombra do elemento */
+}

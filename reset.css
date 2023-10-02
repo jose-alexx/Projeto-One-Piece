@@ -1,0 +1,10 @@
+* {
+  margin: 0; /* Tira o espaçamento entre os elementos */
+  padding: 0; /* Espaçamento interno entre os elementos */
+  box-sizing: border-box; /* Nos ajuda a garantir um preenchimento, largura e altura total de um elemento */
+}
+
+ul { /* Listas */
+  list-style: none; /* Estilo da lista, tira as bolinhas da minha lista*/
+  
+}
